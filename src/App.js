@@ -1,30 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
 
-import NavBar from './Components/Navbar/index.jsx';
+import {Row} from "react-bootstrap"
+
+import NavBar from './Components/Navbar/index';
+import ItemListContainer from './Components/ItemListContainer/Index';
 
 function App() {
   return (
     <div className="App">
       <NavBar title="Mazuzoe"/>
-      <header className="App-header">
+      <h1 className='my-5' >PRODUCTOS</h1>
+      <Row className='d-flex flex-row mx-auto'>
+        <ItemListContainer/>
+      </Row>
+        
 
-        <h1 className="text-3xl font-bold underline">
-          Hello world!
-        </h1>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
     </div>
   );
 }

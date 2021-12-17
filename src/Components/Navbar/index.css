@@ -1,3 +1,7 @@
 .header {
   border-top: 5px solid red;
 }
+
+.header__logo{
+  height: 1.6rem;
+}

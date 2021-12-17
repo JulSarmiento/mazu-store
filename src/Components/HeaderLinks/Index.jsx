@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import {Nav} from 'react-bootstrap';
-import Categories from "../../Mock/Categories"
+
+import Categories from "../../Mock/Categories";
+
 
 
 export default function HeaderLinks() {
@@ -23,6 +25,7 @@ export default function HeaderLinks() {
             <Nav.Link key={categorie.catId} href={categorie.ruta}  className="mx-3">
               {categorie.nombre}
             </Nav.Link>
+            
           </Nav>
         )
       })}  

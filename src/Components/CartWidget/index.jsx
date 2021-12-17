@@ -1,10 +1,12 @@
 import React from "react";
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import { Button } from "react-bootstrap";
 
 export default function CartWidget () {
-  const img = ShoppingCartIcon
+
   return(
-    <img src={img} alt="" />
+    <Button>
+      <i class="fas fa-shopping-cart"></i>
+    </Button>
   )
     
 }
