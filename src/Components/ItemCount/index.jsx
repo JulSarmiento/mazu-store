@@ -5,10 +5,12 @@ import { Button, Col } from "react-bootstrap";
 export default function ItemCount({stock, initial, onAdd}) {
 
   const setOnAdd = () => {
+    stock--
     onAdd(1)
   }
 
   const setOnRest = () => {
+    stock++
     onAdd(-1)
   }
 

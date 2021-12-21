@@ -1,0 +1,8 @@
+.card__text {
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.card__text--title {
+  color: red;
+}
