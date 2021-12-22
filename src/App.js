@@ -3,16 +3,14 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-
 } from "react-router-dom"
 
-import {Row} from "react-bootstrap"
-
 import NavBar from './Components/Navbar/index';
-import ItemListContainer from './Components/ItemListContainer/Index';
-import CategoriesContainer from './Components/CategoriesContainer/Index';
 import NoPageFound from './Components/NoPageFound';
+import ItemDetail from './Components/ItemDetail/Index'
 
+import ProductsView from './Views/ProductsViews/Index';
+import CategoriesView from './Views/CategoriesView/Index';
 
 
 function App() {
@@ -36,20 +34,13 @@ function App() {
 
         </Route>
 
-        <Route path="/Categories">
-          <Row className='container d-flex flex-row mx-auto my-5 '>
-            <h2 className='my-5' >CATEGORIAS</h2>
-            <CategoriesContainer/>
-          </Row>
-          
-        </Route>
+        <Route path="/Categories" component={CategoriesView}/>
 
-        <Route path="/Products">
-          <Row className=' container d-flex flex-row mx-auto'>
-            <h2 className='my-5' >PRODUCTOS</h2>
-            <ItemListContainer/>
-          </Row>
-        </Route>
+        <Route exact path="/Products" component={ProductsView}/>
+
+        <Route path="/Products/:line" component={ProductsView}/>
+
+        <Route exact path="/Products/:line/:colId" component={ItemDetail}/>
 
         {/* Esta es la ultima ruta, */}
         <Route path="*">

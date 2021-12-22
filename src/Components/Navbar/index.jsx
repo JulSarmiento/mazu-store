@@ -28,9 +28,9 @@ export default function NavBar({title}) {
 
           <Nav className="me-auto">
 
-            <Nav.Link href="/Products" className="mx-3"> Store </Nav.Link>
+            {/* <Nav.Link href="Categories/Products" className="mx-3"> </Nav.Link> */}
 
-            <Nav.Link href="/Categories" className="mx-3"> Categories (testing) </Nav.Link>
+            <Nav.Link href="/Categories" className="mx-3"> Store  </Nav.Link>
 
             <CartWidget/>
             
