@@ -8,7 +8,7 @@ import {
 import {Row} from 'react-bootstrap'
 import NavBar from './Components/Navbar';
 import NoPageFound from './Components/NoPageFound';
-import ItemDetail from './Components/ItemDetail'
+import ItemDetailContainer from './Components/ItemDetailContainer';
 
 import CategoriesContainer from './Components/CategoriesContainer';
 import ItemListContainer from './Components/ItemListContainer';
@@ -24,7 +24,7 @@ function App() {
       <Switch>
 
         <Route exact path="/" className="container">
-          <Row>
+          <Row className='container'>
             <h1> Mazuzoe for Fancy Pets</h1>
           </Row>
           
@@ -34,9 +34,11 @@ function App() {
 
         <Route exact path="/Products" component={ItemListContainer}/>
 
+        <Route path="/Products/:line/:colId" component={ItemDetailContainer}/>
+
         <Route path="/Products/:line" component={ItemListContainer}/>
 
-        <Route exact path="/Products/:line/:colId" component={ItemDetail}/>
+
 
         {/* Esta es la ultima ruta, */}
         <Route path="*">

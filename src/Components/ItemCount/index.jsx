@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Button, Col } from "react-bootstrap";
 
-export default function ItemCount({stock, initial, onAdd}) {
+function ItemCount({stock, initial, onAdd}) {
 
   const setOnAdd = () => {
     stock--
@@ -24,3 +24,11 @@ export default function ItemCount({stock, initial, onAdd}) {
 
   );
 }
+
+ItemCount.defaultProps = {
+  stock: 0,
+  onAdd: () => {},
+  initial: 1
+}
+
+export default ItemCount

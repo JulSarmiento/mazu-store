@@ -1,24 +1,12 @@
 import React from "react";
-import { Button, Card, Col } from "react-bootstrap";
-import ItemCount from "../ItemCount/index";
+import { Card, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 import './index.css'
 
 export default function Item({item}){
 
   const formartter = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'})
-
-  const [Counter, setCounter] = React.useState(1);
-
-  const onAdd = (value) => {
-    setCounter(Counter + value) 
-  };
-
-  const addToCart = () => {
-   
-    alert(`Agregaste ${Counter} unidad/es de ${item.line} ${item.color} al carrito. `);
-    setCounter(0);
-  }
 
   return(
     <Col >
@@ -32,9 +20,8 @@ export default function Item({item}){
           <Card.Text className="card__text">
             {formartter.format(parseInt(item.price))}  COP
           </Card.Text>
-          <ItemCount stock={item.stock} initial={Counter} onAdd={onAdd}/>
         </Card.Body>
-        <Button onClick={addToCart}>Añadir al carrito</Button>
+        <Link to={`/Products/${item.slug}/${item.colId}`} className="btn btn-primary">Ver Opciones</Link>
       </Card>
     </Col>
 

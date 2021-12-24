@@ -48,6 +48,14 @@ export default function ItemListContainer() {
     )
   }
 
+  if(items.length === 0){
+    return (
+      <Row className="container ">
+        <p className="text-center">No existen productos para la categoria {items.line}</p>
+      </Row>
+    )
+  }
+  
   return(
     // Enviamos el array de objetos del api al itemList para ser mapeados.
     <Row className=' container d-flex flex-row mx-auto'>
