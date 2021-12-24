@@ -13,14 +13,12 @@ Mazuzoe for Fancy Pets es un e-commerce para la venta de collares y placas de lu
 
 Mazuzeo Store utiliza los siguientes features:
 
-- Manejo de etiquetas semánticas.
-- Manejo de estilos con Sass y Operaciones con Sass.
-- Componentes y layout con Framework (Bootstrap).
-- Implementación de SEO básico.
+- Manejo y diseño de componentes.
+- Componentes con Framework (Bootstrap).
 - Implementación de usabilidad: favicons, helpers, alts, shareable tags, theme tags, titles atributes. 
 - Hosting y Dominio con Firebase.
 - Github Actions para despliegue on push.
-- Documentacion con estandar de JSDoc.
+
 
 ## Tecnologías Aplicadas
 
