@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Mazuzoe 
+## _for Fancy Pets_
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Deploy to Firebase Hosting on merge](https://github.com/JulSarmiento/JulSarmiento.github.io/actions/workflows/firebase-hosting-push.yml/badge.svg)](https://github.com/JulSarmiento/JulSarmiento.github.io/actions/workflows/firebase-hosting-push.yml)
 
-## Available Scripts
+[![Build Status](	https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/JulSarmiento) [![Build Status](	https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/julieth-sarmiento/) [![Build Status](https://img.shields.io/badge/Codepen-000000?style=for-the-badge&logo=codepen&logoColor=white)](https://codepen.io/julsarmiento) 
 
-In the project directory, you can run:
+[![Build Status](https://firebasestorage.googleapis.com/v0/b/mazu-store.appspot.com/o/logos%20and%20icons%2FBeige%20Flor%20Superminimalismo%20Texto%20Curvo%20Logo.png?alt=media&token=eae70af2-782d-44c9-b5a1-87e7c31cdafe)](https://mazu-store.web.app/) 
 
-### `npm start`
+Mazuzoe for Fancy Pets es un e-commerce para la venta de collares y placas de lujo para mascotas. El el proyecto final para el curso de React por CODER HOUSE, desarrollado por Julieth Sarmiento, el cual se aplica todo lo visto durante el curso: 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Features
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Mazuzeo Store utiliza los siguientes features:
 
-### `npm test`
+- Manejo de etiquetas semánticas.
+- Manejo de estilos con Sass y Operaciones con Sass.
+- Componentes y layout con Framework (Bootstrap).
+- Implementación de SEO básico.
+- Implementación de usabilidad: favicons, helpers, alts, shareable tags, theme tags, titles atributes. 
+- Hosting y Dominio con Firebase.
+- Github Actions para despliegue on push.
+- Documentacion con estandar de JSDoc.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tecnologías Aplicadas
 
-### `npm run build`
+Mazuzeo Store utiliza las siguientes tecnologías:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [![NODE.JS badge](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)]()
+- [![JREACT badge](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)]()
+- [![BOOTSTRAP badge](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)]()
+- [![GIT badge](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)]()
+- [![FIREBASE badge](https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black)]()
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Licencia
 
-### `npm run eject`
+MIT
+**Free Software**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Curso por:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[![Coder House logo image](https://www.greatplacetowork.com.ar/images/coderhouse-logo.png)](https://www.coderhouse.com.co/)

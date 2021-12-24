@@ -3,13 +3,17 @@ import React, { useEffect, useState } from "react";
 import CategoriesList from "../CategoriesList";
 
 import Categories from "../../Mock/Categories";
+import Loading from "../Loading";
+import { Row } from "react-bootstrap";
 
 export default function CategoriesContainer() {
 
   const [categories, setCategories] = useState([]);
 
-  useEffect(() => {
+  const [isLoading, setIsLoading] = useState(false);
 
+  useEffect(() => {
+    setIsLoading(true);
     const catPromise = new Promise((resolve, reject) => {
       
       setTimeout(() => {
@@ -17,9 +21,26 @@ export default function CategoriesContainer() {
       }, 2000)
     })
 
-    catPromise.then((res) => setCategories(res));
+    catPromise.then((res) => {
+      setCategories(res)
+      setIsLoading(false);
+    });
   }, [categories])
 
-  return <CategoriesList categories={categories}/>
+  if(isLoading){
+    return (
+      <Row className="loading-container">
+        <Loading message={'Cargando Categorias'}  />
+      </Row>
+    )
+  }
+  return (
+    <>
+      <Row className='container d-flex flex-row mx-auto my-5 '>
+        <h2 className='my-5' > CATEGORIAS </h2>
+        <CategoriesList categories={categories}/>
+      </Row>
+    </>
 
+  )
 }
