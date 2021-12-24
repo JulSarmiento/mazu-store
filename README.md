@@ -33,9 +33,9 @@ Mazuzeo Store utiliza las siguientes tecnologías:
 
 ## Instalación
 ​
-1. Forkeá y cloná el repositorio
+### 1. Forkea o clona el repositorio.
 ​
-2. Parado en la raíz del proyecto corré el comando 
+### 2. Parado en la raíz del proyecto corré el comando:
 ​
    ```
    npm install
@@ -43,13 +43,13 @@ Mazuzeo Store utiliza las siguientes tecnologías:
 ​
     para instalar todas las dependecias del proyecto
 ​
-3. Usá 
+### 3. Digita el comando:  
 ​
    ```
    npm start
    ```
 ​
-    para correr el proyecto, que estará disponible en http://localhost:3000
+  para correr el proyecto, que estará disponible en http://localhost:3000
 ​
 ​
 
