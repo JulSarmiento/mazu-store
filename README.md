@@ -31,6 +31,28 @@ Mazuzeo Store utiliza las siguientes tecnologías:
 - [![FIREBASE badge](https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black)]()
 
 
+## Instalación
+​
+1. Forkeá y cloná el repositorio
+​
+2. Parado en la raíz del proyecto corré el comando 
+​
+   ```
+   npm install
+   ```
+​
+    para instalar todas las dependecias del proyecto
+​
+3. Usá 
+​
+   ```
+   npm start
+   ```
+​
+    para correr el proyecto, que estará disponible en http://localhost:3000
+​
+​
+
 ## Licencia
 
 MIT
