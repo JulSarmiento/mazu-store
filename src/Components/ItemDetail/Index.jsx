@@ -34,7 +34,7 @@ export default function ItemDetail({product}){
         <h2 className="text-center"><strong>{line} {color}</strong></h2>
         <h4 className="text-center">{formartter.format(parseInt(price))} COP</h4>
         <p className="my-3">
-          Nuestros {slug} <strong>{line} color {color}</strong> nace del inteso interes por el glamour, el que diran y el buen gusto.
+          Nuestros {slug} <strong>{line} {color}</strong> nace del inteso interes por el glamour, el que diran y el buen gusto.
           <br/>
           <br/>
           Conformado por {stones} de alta calidad y {material}, pertime que tu compañero/a fiel saque a relucir su lado mas divo y a ser el foco de todas las miradas, especialmente, las de tus vecinos.
