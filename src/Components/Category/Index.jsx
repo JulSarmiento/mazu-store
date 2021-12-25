@@ -1,8 +1,14 @@
 import React from "react";
-import {Row, Col} from 'react-bootstrap';
+import {Row, Col} from "react-bootstrap";
 
-import "./index.css"
+import "./index.css";
 
+/**
+ * This component is the category's card
+ * 
+ * @param {object} 
+ * @returns the category in the card
+ */
 export default function Category({category}) {
 
   return (

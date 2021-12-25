@@ -1,6 +1,12 @@
 import React from "react";
-import "./index.css"
+import "./index.css";
 
+/**
+ * this component create the loading component/
+ * 
+ * @param {string} 
+ * @returns the loading component with the charging message
+ */
 function Loading({message}){
   return (
     <div className="mx-auto my-auto d-flex justify-content-center align-item-center text-center loading">

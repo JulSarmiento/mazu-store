@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { NavDropdown } from 'react-bootstrap';
-import UserCategories from "../../Mock/UserCategories"
+import UserCategories from "../../Mock/UserCategories";
 
-
+/**
+ * This compoenet is the user links dropdown
+ * 
+ * @returns a dropdown list
+ */
 export default function HeaderDropdown() {
 
   const [userCategories, setUserCategories] = useState([]);

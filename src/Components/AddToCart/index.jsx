@@ -1,6 +1,9 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 
+/**
+ * This component create the "add to cart" function.
+ */
 export default function AddToCart(){
   const addCart = () => {
     alert(`Producto agreado al carrito`);

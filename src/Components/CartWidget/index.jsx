@@ -1,6 +1,11 @@
 import React from "react";
 import { Button, Badge } from "react-bootstrap";
 
+
+/**
+ * This component manage the cart logic and return the cart icon with the counter badget
+ * @returns {img}
+ */
 export default function CartWidget () {
 
   return(

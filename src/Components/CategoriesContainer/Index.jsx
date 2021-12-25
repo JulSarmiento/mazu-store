@@ -6,6 +6,11 @@ import Categories from "../../Mock/Categories";
 import Loading from "../Loading";
 import { Row } from "react-bootstrap";
 
+
+/**
+ * This component mangae the api information for the product's category
+ * @returns categories mapped.
+ */
 export default function CategoriesContainer() {
 
   const [categories, setCategories] = useState([]);
@@ -17,12 +22,12 @@ export default function CategoriesContainer() {
     const catPromise = new Promise((resolve, reject) => {
       
       setTimeout(() => {
-        resolve(Categories)
+        resolve(Categories);
       }, 2000)
     })
 
     catPromise.then((res) => {
-      setCategories(res)
+      setCategories(res);
       setIsLoading(false);
     });
   }, [categories])

@@ -1,15 +1,20 @@
 import React from "react";
-import Logo from "../../assets/imgs/mazu-icon.svg"
-import {Navbar, Container, NavDropdown, Nav} from 'react-bootstrap';
+import Logo from "../../assets/imgs/mazu-icon.svg";
+import {Navbar, Container, NavDropdown, Nav} from "react-bootstrap";
 
-//import CartWidget from "../CartWidget/index.jsx";
-
-import "./index.css"
+import "./index.css";
 import HeaderDropdown from "../HeaderDropDown";
 import CartWidget from "../CartWidget";
+import "./index.css";
 
-import './index.css'
-
+/**
+ * 
+ * This component manage the navbar components 
+ * 
+ * @param {string} 
+ * 
+ * @returns functional navbar
+ */
 export default function NavBar({title}) {
 
   const userIcon = <i class="fas fa-user"/>

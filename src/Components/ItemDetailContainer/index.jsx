@@ -6,8 +6,11 @@ import ProductCollar from "../../Mock/ProductCollars";
 import Loading from "../Loading";
 import ItemDetail from "../ItemDetail";
 
-// agregar el cargando y los perritos de imagen, el loading lazy  si aplica
-
+/**
+ * This component manage the view and the call for the api mock information. 
+ * 
+ * @returns the found object in the items array.
+ */
 export default function ItemDetailContainer() {
   const [isLoading, setIsLoading] = useState(false);
   const [product, setProduct] = useState(null)

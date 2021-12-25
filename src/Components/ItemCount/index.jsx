@@ -1,7 +1,11 @@
-import React from 'react';
+import React from "react";
 
 import { Button, Col } from "react-bootstrap";
 
+
+/**
+ * this component manage the counting logic.
+ */
 function ItemCount({stock, initial, onAdd}) {
 
   const setOnAdd = () => {

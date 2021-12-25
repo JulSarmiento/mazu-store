@@ -2,8 +2,13 @@ import React from "react";
 import { Card, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-import './index.css'
+import "./index.css"
 
+/**
+ * This is the item's card component * 
+ * @param {onject}  
+ * @returns the porduct's card component with the object information.
+ */
 export default function Item({item}){
 
   const formartter = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'})

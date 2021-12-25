@@ -1,44 +1,45 @@
 import React, { useEffect, useState } from "react";
 import {Row} from "react-bootstrap";
-import {useParams} from 'react-router-dom'
+import {useParams} from "react-router-dom";
 
 import ItemList from "../ItemList";
 import Loading from "../Loading";
-//LLamado al api, manejo de estados, traer 1 item list ya mapeado y devuelve como lista
 import ProductCollars from "../../Mock/ProductCollars"
 
+/**
+ * This component manage the logic and the call for the api mock. 
+ * @returns the object's array
+ */
 export default function ItemListContainer() {
   console.log(useParams());
-  // promesa
-  // Ponemos un estados porque va a cambiar y actualizar
 
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const {line} = useParams()
+  const {line} = useParams();
 
   useEffect(() => {
 
     const itemPromise = new Promise((resolve, reject) => {
-      setIsLoading(true)
+      setIsLoading(true);
       setTimeout(() => {
-        resolve(ProductCollars)
-      }, 2000)
+        resolve(ProductCollars);
+      }, 2000);
 
     })
 
     itemPromise.then((res) => {
 
       if(!!line){
-        setItems(res.filter(x => x.slug === line))
+        setItems(res.filter(x => x.slug === line));
       } else{
-        setItems(res)
+        setItems(res);
       }
       
       
     }).finally(() => {
-      setIsLoading(false)
+      setIsLoading(false);
     })
-  }, [ line]) //useEffect escucha los cambios del array items, y se actualiza a medida que se modifica dicho array.
+  }, [ line]); 
 
   if(isLoading){
     return(

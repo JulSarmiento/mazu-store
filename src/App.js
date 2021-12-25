@@ -12,6 +12,7 @@ import ItemDetailContainer from './Components/ItemDetailContainer';
 
 import CategoriesContainer from './Components/CategoriesContainer';
 import ItemListContainer from './Components/ItemListContainer';
+import HomeContainer from './Components/HomeContainer';
 
 
 function App() {
@@ -23,9 +24,9 @@ function App() {
       {/* //Esto modifica la rutha que van a cambiar. Fuera del switch van las cosas que no van a cambiar, como el navbar */}
       <Switch>
 
-        <Route exact path="/" className="container">
-          <Row className='container'>
-            <h1> Mazuzoe for Fancy Pets</h1>
+        <Route exact path="/" className="container-fluid">
+          <Row className='container-fluid mx-auto' >
+            <HomeContainer/>
           </Row>
           
         </Route>

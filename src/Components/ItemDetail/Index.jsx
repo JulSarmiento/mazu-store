@@ -1,9 +1,15 @@
 import React, {useState} from "react";
-import "./index.css"
-import ItemCount from "../ItemCount"
+import "./index.css";
+import ItemCount from "../ItemCount";
 import AddToCart from "../AddToCart";
 
 
+/**
+ * This coimponent return the item detail's card component
+ * 
+ * @param {object} 
+ * @returns the item detail's card with object's information.
+ */
 export default function ItemDetail({product}){
 
   const formartter = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'})
