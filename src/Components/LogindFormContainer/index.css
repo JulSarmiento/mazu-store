@@ -1,0 +1,21 @@
+.login-picture{
+  height: 300px;
+}
+
+@media (min-width: 768px) {
+  .login-picture{
+    height: 600px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .login-picture{
+    height: 500px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .login-picture{
+    height: 700px;
+  }
+}

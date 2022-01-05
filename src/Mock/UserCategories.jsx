@@ -1,5 +1,5 @@
 const UserCategories = [
-  { catId: 4, nombre: "Iniciar Sesion", ruta: "/loggin" },
+  { catId: 4, nombre: "Iniciar Sesion", ruta: "/login" },
   { catId: 5, nombre: "Nuevo Usuario", ruta: "/signin" },
 ]
 

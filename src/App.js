@@ -13,6 +13,8 @@ import ItemDetailContainer from './Components/ItemDetailContainer';
 import CategoriesContainer from './Components/CategoriesContainer';
 import ItemListContainer from './Components/ItemListContainer';
 import HomeContainer from './Components/HomeContainer';
+import LoginFormContainer from './Components/LogindFormContainer';
+import SigninFormContainer from './Components/SigninFormContainer';
 
 
 function App() {
@@ -38,6 +40,10 @@ function App() {
         <Route path="/Products/:line/:colId" component={ItemDetailContainer}/>
 
         <Route path="/Products/:line" component={ItemListContainer}/>
+
+        <Route path="/Login" component={LoginFormContainer} />
+
+        <Route path="/Signin" component={SigninFormContainer}/>
 
 
 
