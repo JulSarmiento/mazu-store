@@ -22,7 +22,6 @@ export default function HomeContainer(){
             <br />
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse iste aspernatur temporibus, incidunt culpa ex, iure doloribus corrupti soluta ea labore facere, quas similique nemo? Provident veritatis aliquam ratione explicabo!
           </p>
-
         </div>
       </div>
    

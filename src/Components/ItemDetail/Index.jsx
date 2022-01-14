@@ -1,7 +1,9 @@
-import React, {useState} from "react";
-import "./index.css";
+import React, {useState, useContext} from "react";
+import "./index.css"; 
+import { Button } from "react-bootstrap";
 import ItemCount from "../ItemCount";
-import AddToCart from "../AddToCart";
+import CartContext from "../../Context/CartContext";
+import Formatter from "../../Utilities/MoneyFormater";
 
 
 /**
@@ -12,16 +14,19 @@ import AddToCart from "../AddToCart";
  */
 export default function ItemDetail({product}){
 
-  const formartter = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'})
-
-  const {slug, line, color, stones, stock, material, price, picture} = product; 
+  const {addItem} = useContext(CartContext);
 
   const [counter, setCounter] = useState(1);
 
+  const {slug, line, color, stones, stock, material, price, picture} = product; 
 
   const onAdd = (value) => {
     setCounter(counter + value) 
   };
+
+  const addToCart = () => {
+    addItem(product, counter)
+  }
 
   return(
     <div className="card d-flex flex-row p-5 m-3 itemDetailContainer">
@@ -32,7 +37,7 @@ export default function ItemDetail({product}){
       
       <div  className="gap-5 mx-5 px-3">
         <h2 className="text-center"><strong>{line} {color}</strong></h2>
-        <h4 className="text-center">{formartter.format(parseInt(price))} COP</h4>
+        <h4 className="text-center">{Formatter(price)} COP</h4>
         <p className="my-3">
           Nuestros {slug} <strong>{line} {color}</strong> nace del inteso interes por el glamour, el que diran y el buen gusto.
           <br/>
@@ -111,14 +116,10 @@ export default function ItemDetail({product}){
             </div>   
 
             <div className="mx-auto">
-              <AddToCart/>
+              <Button onClick={addToCart}>Agregar al carrito</Button>
             </div>          
           </form>
 
-
-          <div>
-
-          </div>
         </div>
 
       </div>

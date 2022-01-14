@@ -1,7 +1,21 @@
 .header {
-  border-top: 5px solid red;
+  border-top: 5px solid #682C1A;
+  position: sticky;
+  top: 0;
+  box-shadow: 0px 0.5px 18px -1px #ff84744f ;
+  z-index: 10;
 }
 
 .header__logo{
   height: 1.6rem;
+  transition: transform 2s ease-in-out;
+}
+
+.header__logo:hover  {
+  transform: rotate(360deg)
+}
+
+.links{
+  text-decoration: none;
+  color: #682C1A
 }

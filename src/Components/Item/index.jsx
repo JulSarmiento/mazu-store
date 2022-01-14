@@ -15,7 +15,7 @@ export default function Item({item}){
 
   return(
     <Col >
-      <Card className="my-3 mx-3" style={{ width: '18rem' }}>
+      <Card className="my-3 mx-3 card__shadow" style={{ width: '18rem' }}>
         <Card.Img loading="lazy" variant="top" src={item.picture} className="item-img" />
         <Card.Body>
           <Card.Title className="card__text card__text--title" >{item.line} {item.color }</Card.Title>

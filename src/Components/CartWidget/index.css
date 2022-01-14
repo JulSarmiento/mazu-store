@@ -1,0 +1,31 @@
+.cart{
+  border-top: 3px solid #682C1A;
+}
+
+.cart__titleContainer{
+  border-bottom: 1px solid #682C1A;
+}
+
+.cart__footerContainer{
+  border-top: 1px solid #682C1A;
+}
+
+.cart__title{
+  color: #682C1A;
+  font-family: 'Syncopate', 'serif';
+  letter-spacing: 2px;
+}
+
+.counter__badge{
+  height: 20px;
+}
+
+.card__shadow{
+  box-shadow: 0px 0px 20px 2px rgba(104, 44, 26, 0.089);
+}
+
+.btn{
+  background-color: #F4F2EE;
+  color: #682C1A;
+  border: 1px solid #682C1A;
+}

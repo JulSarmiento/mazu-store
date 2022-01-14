@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../../assets/imgs/mazu-icon.svg";
 import {Navbar, Container, NavDropdown, Nav} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 import "./index.css";
 import HeaderDropdown from "../HeaderDropDown";
@@ -25,7 +26,9 @@ export default function NavBar({title}) {
 
       <Container className="header__container">
 
-        <Navbar.Brand href="/"><img src={Logo} alt="" className="header__logo" /></Navbar.Brand>
+        <Navbar.Brand >
+          <Link to="/"><img src={Logo} alt="" className="header__logo" /></Link>
+        </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
@@ -33,9 +36,7 @@ export default function NavBar({title}) {
 
           <Nav className="me-auto">
 
-            {/* <Nav.Link href="Categories/Products" className="mx-3"> </Nav.Link> */}
-
-            <Nav.Link href="/Categories" className="mx-3"> Store  </Nav.Link>
+            <Link to="/Categories" className="mx-3 my-auto links "> Store  </Link>
 
             <CartWidget/>
             
