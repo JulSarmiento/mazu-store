@@ -5,14 +5,25 @@ import CartContext from '../Context/CartContext';
 const DEFAULT_CART = {totalItems: 0, products: [], totalPrice: 0}
 
 const CartProvider = ({children}) => {
+	
 	const [cart, setCart] = useState(DEFAULT_CART);
 
+	/**
+	 * This function validates if an item already exists in the cart list.
+	 * @param {number} itemId 
+	 * @returns 
+	 */
 	const isInCart = (itemId) => {
 		const {products} = cart
 
-		return products.findIndex( ({product}) => itemId == product.colId);
+		return products.findIndex( ({product}) => itemId === product.colId);
 	}
 
+	/**
+	 * This functon add a new item to the cart list
+	 * @param {object} product 
+	 * @param {number} counter 
+	 */
 	const addItem = (product, counter) => {
 
 		let { totalItems, products, totalPrice } = cart;
@@ -32,14 +43,20 @@ const CartProvider = ({children}) => {
 	};
 
 	const removeItem = (itemId) => {
+		let {products, totalItems, totalPrice} = cart
 
-		const {products} = cart
+		const index = isInCart(itemId);
 
-		const auxArray = products.filter((product) => product.colId !== itemId)
+		console.log('Removing index', itemId, index)
+		if (index >= 0 ) {
+			const {product, counter} = products[index];
 
-		setCart({...cart, products:auxArray});
-
-
+			totalItems -= counter
+			totalPrice -= product.price * counter;
+			
+			products.splice(index, 1);
+			setCart({...cart, products, totalItems, totalPrice});
+		}
 	};
 
 	const clear = () => {

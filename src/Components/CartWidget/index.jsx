@@ -48,12 +48,11 @@ export default function CartWidget () {
                   <Badge variant="primary" className="mx-3 counter__badge">
                     {counter}
                   </Badge>
-                  <Button className="delete-icon" onClick={removeItem(product.colId)} >
+                  <Button className="delete-icon" onClick={() => removeItem(product.colId)} >
                     <i class="fas fa-trash" ></i>
                   </Button> 
                 </ListGroup.Item>
               )
-                        
             })}
 
           </ListGroup>
