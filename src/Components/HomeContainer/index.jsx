@@ -13,7 +13,7 @@ export default function HomeContainer(){
    <>
       <Slider/>
 
-      <div className=" container p-2 d-flex align-items-center flex-row justify-content-center gap-3 aboutUs ">
+      <div className=" container p-2 gap-3 aboutUs ">
         <img src="https://firebasestorage.googleapis.com/v0/b/mazu-store.appspot.com/o/logos%20and%20icons%2Fmazu-logo.svg?alt=media&token=8e1741c0-ac41-459a-b81c-c69dca1bab80" className="aboutUs__picture" alt="Logo completo de mazuzoe store" />
         <div className="aboutUs__textContainer">
           <p className="p-3 text">

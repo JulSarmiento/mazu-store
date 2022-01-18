@@ -29,13 +29,13 @@ export default function ItemDetail({product}){
   }
 
   return(
-    <div className="card d-flex flex-row p-5 m-3 itemDetailContainer">
+    <div className="card d-flex   justify-content-center align-items-center flew-sm-column flew-md-column flex-lg-row p-3 gap-3 itemDetailContainer">
       <div className="my-auto itemDetail__pictureContainer">
         <img loading="lazy" src={picture} className=" itemDetail__picture" alt="" />
         <div className="itemDetail__pictureBackground"></div>
       </div>
       
-      <div  className="gap-5 mx-5 px-3">
+      <div  className="gap-5 mx-5 px-3 itemDetail__textContainer">
         <h2 className="text-center"><strong>{line} {color}</strong></h2>
         <h4 className="text-center">{Formatter(price)} COP</h4>
         <p className="my-3">
@@ -45,77 +45,117 @@ export default function ItemDetail({product}){
           Conformado por {stones} de alta calidad y {material}, pertime que tu compañero/a fiel saque a relucir su lado mas divo y a ser el foco de todas las miradas, especialmente, las de tus vecinos.
           <br />
           <br />
-           Garantizamos la "divez" o devolveremos tu dinero!.
+           Garantizamos la <strong>"divez" </strong> o devolveremos tu dinero!.
         </p>
 
         <div>
           
-          <form action="" className="container d-flex flex-column gap-3" >
+          <form action="" className=" d-flex flex-column gap-3" >
 
-            <h3>Tallas:</h3>
 
-            <div className="container d-flex gap-3">
-              <div className=" d-flex align-items-center gap-2">
-                <label htmlFor="">XS</label>
-                <input type="radio" name="zise" value="XS"/>
+            {/* Para collares */}
+
+            { slug === "Collars" ? 
+              <div>
+                <h3>Tallas:</h3>
+
+                <div className="d-flex flex-row gap-3 px-2 ">
+
+                  <div className=" d-flex align-items-center gap-1 form__item">
+                    <label htmlFor="">XS</label>
+                    <input type="radio" name="zise" value="XS"/>
+                  </div>
+
+                  <div  className=" d-flex align-items-center gap-1 form__item">
+                    <label htmlFor="">S</label>
+                    <input type="radio" name="zise" value="XS"/>
+                  </div>
+
+                  <div className=" d-flex align-items-center gap-1 form__item">
+                    <label htmlFor="">M</label>
+                    <input type="radio" name="zise" value="XS"/>
+                  </div>
+
+                  <div className=" d-flex align-items-center gap-1 form__item">
+                    <label htmlFor="">L</label>
+                    <input type="radio" name="zise" value="XS"/>
+                  </div>
+
+                  <div className=" d-flex align-items-center gap-1 form__item">
+                    <label htmlFor="">XL</label>
+                    <input type="radio" name="zise" value="XS"/>
+                  </div>
+
+                </div>
+
+                <div className="my-3">
+                    
+                  <h3>Tipo:</h3>
+                  {/* Para Collares */}
+
+                  <div className="container d-flex gap-3">
+
+                    <div className=" d-flex align-items-center gap-1 ">
+                      <label htmlFor="">6 mm</label>
+                      <input type="radio" name="type" value="6mm"/>
+                    </div>
+
+                    <div  className=" d-flex align-items-center gap-1 ">
+                      <label htmlFor="">8 mm</label>
+                      <input type="radio" name="type" value="8 mm"/>
+                    </div>
+
+                    <div className=" d-flex align-items-center gap-1 ">
+                      <label htmlFor="">10 mm</label>
+                      <input type="radio" name="type" value="10mm"/>
+                    </div>
+
+                  </div>
+
+                </div>
+
               </div>
 
-              <div  className=" d-flex align-items-center gap-2">
-                <label htmlFor="">S</label>
-                <input type="radio" name="zise" value="XS"/>
-              </div>
+            :
 
-              <div className=" d-flex align-items-center gap-2">
-                <label htmlFor="">M</label>
-                <input type="radio" name="zise" value="XS"/>
-              </div>
+              <div>
+              <h3>Complemento:</h3>
+              {/* Para Placas */}
+              <div className="container d-flex gap-3">
+                
+                <div className=" d-flex align-items-center gap-1 ">
+                  <label htmlFor="">Estrella</label>
+                  <input type="radio" name="complement" value="star"/>
+                </div>
 
-              <div className=" d-flex align-items-center gap-2">
-                <label htmlFor="">L</label>
-                <input type="radio" name="zise" value="XS"/>
-              </div>
+                <div  className=" d-flex align-items-center gap-1 ">
+                  <label htmlFor="">Corazon</label>
+                  <input type="radio" name="complement" value="heart"/>
+                </div>
 
-              <div className=" d-flex align-items-center gap-2">
-                <label htmlFor="">XL</label>
-                <input type="radio" name="zise" value="XS"/>
-              </div>
+                <div className=" d-flex align-items-center gap-1 ">
+                  <label htmlFor="">Nada</label>
+                  <input type="radio" name="complement" value="none"/>
+                </div>
 
-              <div className=" d-flex align-items-center gap-2">
-                <label htmlFor="">XXL</label>
-                <input type="radio" name="zise" value="XS"/>
               </div>
-
             </div>
-
-            <h3>Tipo:</h3>
             
-            <div className="container d-flex gap-3">
-              <div className=" d-flex align-items-center gap-2">
-                <label htmlFor="">6 mm</label>
-                <input type="radio" name="type" value="6mm"/>
-              </div>
-
-              <div  className=" d-flex align-items-center gap-2">
-                <label htmlFor="">8 mm</label>
-                <input type="radio" name="type" value="8 mm"/>
-              </div>
-
-              <div className=" d-flex align-items-center gap-2">
-                <label htmlFor="">10 mm</label>
-                <input type="radio" name="type" value="10mm"/>
-              </div>
-
-            </div>
+            }           
+            
 
             <div >
-              <h3>Cantidad</h3>
+              <h3>Cantidad: </h3>
               <div>
                 <p className="mx-1">Disponibles: {stock}</p>
-                <ItemCount stock={stock} initial={counter} onAdd={onAdd}/>
+                <div className="counter">
+                  <ItemCount stock={stock} initial={counter} onAdd={onAdd}/>
+                </div>
+                
               </div>
             </div>   
 
-            <div className="mx-auto">
+            <div className="mx-auto ">
               <Button onClick={addToCart}>Agregar al carrito</Button>
             </div>          
           </form>

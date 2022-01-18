@@ -41,7 +41,7 @@ export default function CategoriesContainer() {
   }
   return (
     <>
-      <Row className='container d-flex flex-row mx-auto my-5 '>
+      <Row className='container d-flex flex-row justify-content-center align-items-center mx-auto my-5'>
         <h2 className='my-5' > CATEGORIAS </h2>
         <CategoriesList categories={categories}/>
       </Row>

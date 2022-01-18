@@ -29,3 +29,10 @@
   color: #682C1A;
   border: 1px solid #682C1A;
 }
+
+.cart__btn{
+  width: auto;
+  text-align: start;
+  border: none;
+  background-color:#f8f8f8 ;
+}

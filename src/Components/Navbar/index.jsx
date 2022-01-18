@@ -36,7 +36,7 @@ export default function NavBar({title}) {
 
           <Nav className="me-auto">
 
-            <Link to="/Categories" className="mx-3 my-auto links "> Store  </Link>
+            <Nav.Link ><Link to="/Categories" className="mx-3 my-auto links "> Store  </Link></Nav.Link>
 
             <CartWidget/>
             

@@ -2,8 +2,37 @@
   box-shadow: 0px 0px 20px 2px rgba(104, 44, 26, 0.116);
   border-radius: 10px;
   margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 100%;
+  
 }
 
-.aboutUs-picture{
-  background: url(https://assets.materialup.com/uploads/a7e6009b-6d69-4569-b1ee-0e01b234f2a1/preview.gif) no-repeat center center ;
+.aboutUs__picture{
+  height: 200px;
+}
+
+@media (min-width: 768px) {
+  .aboutUs__picture{
+    height: 300px;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .aboutUs__picture{
+    height: 300px;
+  }
+
+  .aboutUs{
+    flex-direction: row;    
+  }
+}
+
+@media (min-width: 1440px) {
+  .aboutUs__picture{
+    height: 300px;
+  }
 }

@@ -22,7 +22,7 @@ export default function CartWidget () {
 
   return(
     <>
-      <Button onClick={handleShow} >
+      <Button onClick={handleShow} className="cart__btn">
         <i class="fas fa-shopping-cart"></i> <Badge className="mx-1" bg="danger">{totalItems}</Badge>
       </Button>
 

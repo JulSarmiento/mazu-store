@@ -3,29 +3,95 @@
   box-shadow: 0px 0px 20px 2px rgba(104, 44, 26, 0.089);
 }
 
-
 .itemDetail__pictureContainer {
-  height: 400px;
+  height: 250px;
   position: relative;
 }
 
 .itemDetail__picture{
   height: 100%;
   object-fit: contain;
-  z-index: 100;
+  z-index: 10;
   border-radius: 10px;
   position: relative;
   background: url(https://assets.materialup.com/uploads/a7e6009b-6d69-4569-b1ee-0e01b234f2a1/preview.gif) no-repeat center center ;
-  
 }
 
 .itemDetail__pictureBackground{
   position:absolute;
-  left: -40px;
+  left: -27px;
   top: 50px;
   background-color: #682c1a;
   border-radius: 10px;
-  height: 400px;
-  width: 480px;
+  height: 250px;
+  width: 300px;
+}
 
+.itemDetail__textContainer{
+  margin-top: 50px;
+  width: 300px;
+}
+
+.itemDetail__textContainer h2, .itemDetail__textContainer h4, .itemDetail__textContainer h3{
+  color:  #682c1a;
+  font-family: 'Syncopate', 'serif';
+}
+
+.itemDetail__textContainer h3{
+  font-size: 15px;
+}
+
+.itemDetail__textContainer p {
+  font-family: 'Poppins', 'sans-serif';
+}
+
+
+.form__item{
+  width: 40px;
+}
+
+.counter{
+  font-family: 'Poppins', 'sans-serif';
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+
+  .itemDetail__pictureContainer {
+    height: 400px;
+    position: relative;
+  }
+  
+  .itemDetail__picture{
+    height: 100%;
+    object-fit: contain;
+    z-index: 100;
+    border-radius: 10px;
+    position: relative;
+    background: url(https://assets.materialup.com/uploads/a7e6009b-6d69-4569-b1ee-0e01b234f2a1/preview.gif) no-repeat center center ;
+    
+  }
+  
+  .itemDetail__pictureBackground{
+    position:absolute;
+    left: -40px;
+    top: 50px;
+    background-color: #682c1a;
+    border-radius: 10px;
+    height: 400px;
+    width: 480px;
+  
+  }
+}
+
+@media (min-width: 1024px) {
+  .login-picture{
+    height: 500px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .login-picture{
+    height: 700px;
+  }
 }
