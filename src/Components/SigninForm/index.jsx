@@ -15,7 +15,7 @@ export default function SigninForm(){
           label="Nombre Completo"
           className="mb-3 input--mod"
         >
-          <Form.Control type="text" placeholder="Nombre Completo" />
+          <Form.Control type="text" placeholder="Nombre Completo" required />
         </FloatingLabel>
       </Form.Group>
 
@@ -25,7 +25,7 @@ export default function SigninForm(){
           label="Edad"
           className="mb-3 input--mod"
         >
-          <Form.Control type="number" placeholder="edad" />
+          <Form.Control type="number" placeholder="edad" min="16" required  />
         </FloatingLabel>
       </Form.Group>
 
@@ -35,7 +35,7 @@ export default function SigninForm(){
           label="Correo Electronico"
           className="mb-3 input--mod"
         >
-          <Form.Control type="email" placeholder="Correo electronico" />
+          <Form.Control type="email" placeholder="Correo electronico"  required/>
         </FloatingLabel>
       </Form.Group>
 
@@ -45,17 +45,17 @@ export default function SigninForm(){
           label="Confirmar Correo Electronico"
           className="mb-3 input--mod"
         >
-          <Form.Control type="email" placeholder="Correo electronico" />
+          <Form.Control type="email" placeholder="Correo electronico" required />
         </FloatingLabel>
       </Form.Group>
 
-      <Form.Group className=" mb-3" controlId="formBasicEmail">
+      <Form.Group className=" mb-3" controlId="formBasicEmail" required>
         <FloatingLabel
           controlId="floatingInput"
           label="Contraseña"
           className="mb-3 input--mod"
         >
-          <Form.Control type="password" placeholder="Contraseña" />
+          <Form.Control type="password" placeholder="Contraseña"  required/>
         </FloatingLabel>
       </Form.Group>
 
@@ -65,7 +65,7 @@ export default function SigninForm(){
           label="Confirmar Contraseña"
           className="mb-3 input--mod"
         >
-          <Form.Control type="password" placeholder="Contraseña" />
+          <Form.Control type="password" placeholder="Contraseña" required />
         </FloatingLabel>
       </Form.Group>
 
@@ -76,7 +76,7 @@ export default function SigninForm(){
           label="Contraseña"
           className="mb-3 input--mod"
         >
-          <Form.Control type="password" placeholder="Contraseña" />
+          <Form.Control type="password" placeholder="Contraseña"  required/>
           
           <Form.Group className="my-3 p-2" controlId="formBasicCheckbox">
             <Form.Check type="checkbox" label="Aceptar terminos y condiciones"/>

@@ -24,15 +24,15 @@ const CartProvider = ({children}) => {
 	 * @param {object} product 
 	 * @param {number} counter 
 	 */
-	const addItem = (product, counter) => {
+	const addItem = (product, counter, options) => {
 
 		let { totalItems, products, totalPrice } = cart;
-		const validator = isInCart(product.colId);
+		const validator = isInCart(product.colId, options);
 
 		if(validator >= 0){
 			products[validator].counter += counter;
 		} else {
-			products.push({product, counter});
+			products.push({product, counter, ...options});
 		}
 
 		totalItems+= counter;

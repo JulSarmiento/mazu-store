@@ -36,3 +36,9 @@
   border: none;
   background-color:#f8f8f8 ;
 }
+
+.cart__link{
+  color: #682C1A;
+  font-family: 'Syncopate', 'serif';
+  font-size: 10px;
+}

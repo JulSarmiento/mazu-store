@@ -14,18 +14,28 @@ import Formatter from "../../Utilities/MoneyFormater";
  */
 export default function ItemDetail({product}){
 
+  const [formData, setFomrData] = useState({
+    
+  });
+
   const {addItem} = useContext(CartContext);
 
   const [counter, setCounter] = useState(1);
 
   const {slug, line, color, stones, stock, material, price, picture} = product; 
 
+  const onInputChange = (e) => {
+    const input = e.target
+    setFomrData({...formData, [input.name] : input.value});
+  }
+
   const onAdd = (value) => {
     setCounter(counter + value) 
   };
 
-  const addToCart = () => {
-    addItem(product, counter)
+  const addToCart = (e) => {
+    e.preventDefault();
+    addItem(product, counter, formData)
   }
 
   return(
@@ -50,7 +60,7 @@ export default function ItemDetail({product}){
 
         <div>
           
-          <form action="" className=" d-flex flex-column gap-3" >
+          <form onSubmit={addToCart} className=" d-flex flex-column gap-3" >
 
 
             {/* Para collares */}
@@ -63,27 +73,27 @@ export default function ItemDetail({product}){
 
                   <div className=" d-flex align-items-center gap-1 form__item">
                     <label htmlFor="">XS</label>
-                    <input type="radio" name="zise" value="XS"/>
+                    <input type="radio" name="size" value="XS" onChange={onInputChange}required/>
                   </div>
 
                   <div  className=" d-flex align-items-center gap-1 form__item">
                     <label htmlFor="">S</label>
-                    <input type="radio" name="zise" value="XS"/>
+                    <input type="radio" name="size" value="S" onChange={onInputChange}/>
                   </div>
 
                   <div className=" d-flex align-items-center gap-1 form__item">
                     <label htmlFor="">M</label>
-                    <input type="radio" name="zise" value="XS"/>
+                    <input type="radio" name="size" value="M" onChange={onInputChange}/>
                   </div>
 
                   <div className=" d-flex align-items-center gap-1 form__item">
                     <label htmlFor="">L</label>
-                    <input type="radio" name="zise" value="XS"/>
+                    <input type="radio" name="size" value="L" onChange={onInputChange}/>
                   </div>
 
                   <div className=" d-flex align-items-center gap-1 form__item">
                     <label htmlFor="">XL</label>
-                    <input type="radio" name="zise" value="XS"/>
+                    <input type="radio" name="size" value="XL" onChange={onInputChange}/>
                   </div>
 
                 </div>
@@ -93,21 +103,21 @@ export default function ItemDetail({product}){
                   <h3>Tipo:</h3>
                   {/* Para Collares */}
 
-                  <div className="container d-flex gap-3">
+                  <div className="d-flex gap-3">
 
                     <div className=" d-flex align-items-center gap-1 ">
                       <label htmlFor="">6 mm</label>
-                      <input type="radio" name="type" value="6mm"/>
+                      <input type="radio" name="type" value="6mm" onChange={onInputChange} required/>
                     </div>
 
                     <div  className=" d-flex align-items-center gap-1 ">
                       <label htmlFor="">8 mm</label>
-                      <input type="radio" name="type" value="8 mm"/>
+                      <input type="radio" name="type" value="8 mm" onChange={onInputChange}/>
                     </div>
 
                     <div className=" d-flex align-items-center gap-1 ">
                       <label htmlFor="">10 mm</label>
-                      <input type="radio" name="type" value="10mm"/>
+                      <input type="radio" name="type" value="10mm" onChange={onInputChange}/>
                     </div>
 
                   </div>
@@ -121,21 +131,21 @@ export default function ItemDetail({product}){
               <div>
               <h3>Complemento:</h3>
               {/* Para Placas */}
-              <div className="container d-flex gap-3">
+              <div className=" d-flex gap-3">
                 
                 <div className=" d-flex align-items-center gap-1 ">
                   <label htmlFor="">Estrella</label>
-                  <input type="radio" name="complement" value="star"/>
+                  <input type="radio" name="complement" value="star" onChange={onInputChange} required/>
                 </div>
 
                 <div  className=" d-flex align-items-center gap-1 ">
                   <label htmlFor="">Corazon</label>
-                  <input type="radio" name="complement" value="heart"/>
+                  <input type="radio" name="complement" value="heart" onChange={onInputChange}/>
                 </div>
 
                 <div className=" d-flex align-items-center gap-1 ">
                   <label htmlFor="">Nada</label>
-                  <input type="radio" name="complement" value="none"/>
+                  <input type="radio" name="complement" value="none" onChange={onInputChange}/>
                 </div>
 
               </div>
@@ -156,7 +166,7 @@ export default function ItemDetail({product}){
             </div>   
 
             <div className="mx-auto ">
-              <Button onClick={addToCart}>Agregar al carrito</Button>
+              <Button type="submit">Agregar al carrito</Button>
             </div>          
           </form>
 
@@ -164,7 +174,6 @@ export default function ItemDetail({product}){
 
       </div>
 
-     
     </div>
   )
 }

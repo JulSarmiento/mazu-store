@@ -1,6 +1,6 @@
 import React from "react";
 import {Image} from "react-bootstrap";
-
+import "./index.css"
 import SigninForm from "../SigninForm";
 
 

@@ -1,5 +1,6 @@
 import React, {useContext, useState} from "react";
 import { Button, Badge, Offcanvas, ListGroup } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import CartContext from "../../Context/CartContext";
 import Formatter from "../../Utilities/MoneyFormater";
 import "./index.css";
@@ -32,37 +33,50 @@ export default function CartWidget () {
         </Offcanvas.Header>
         <Offcanvas.Body>
 
-          <ListGroup as="ol" numbered className="gap-3">
+          {products.length == 0 ? 
+              <div className="d-flex gap-2">
+                <p> Carrito Vacio. Para comprar visita nuestra</p>
+                <Link to="../Categories" className="cart__link mt-1">Store</Link>
+              </div>
+            : 
+              <ListGroup as="ol" numbered className="gap-3">
 
-            {products.map( ({product, counter}) => {
-              return (
-                <ListGroup.Item
-                key={product.colId}
-                as="li"
-                className="d-flex justify-content-between align-items-start card__shadow"
-                >
-                  <div className="ms-2 me-auto">
-                    <div className="fw-bold">{product.line} {product.color} {product.type} </div>
-                    {Formatter(product.price)} COP
-                  </div>
-                  <Badge variant="primary" className="mx-3 counter__badge">
-                    {counter}
-                  </Badge>
-                  <Button className="delete-icon" onClick={() => removeItem(product.colId)} >
-                    <i class="fas fa-trash" ></i>
-                  </Button> 
-                </ListGroup.Item>
-              )
-            })}
+              {products.map( ({product, counter}) => {
+                return (
+                  <ListGroup.Item
+                  key={product.colId}
+                  as="li"
+                  className="d-flex justify-content-between align-items-start card__shadow"
+                  >
+                    <div className="ms-2 me-auto">
+                      <div className="fw-bold">{product.line} {product.color} {product.type} Talla:{product.size}</div>
+                      {Formatter(product.price)} COP
+                    </div>
+                    <Badge variant="primary" className="mx-3 counter__badge">
+                      {counter}
+                    </Badge>
+                    <Button className="delete-icon" onClick={() => removeItem(product.colId)} >
+                      <i class="fas fa-trash" ></i>
+                    </Button> 
+                  </ListGroup.Item>
+                )
+              })}
 
-          </ListGroup>
+            </ListGroup>
+            }
+         
 
-          <div className="my-3 cart__footerContainer" >
-            <Button className="my-3 btn" onClick={clear}>
+          <div className="my-3 d-flex flex-column cart__footerContainer" >
+            <Button className="my-2 btn" onClick={clear}>
               Vaciar Carrito
             </Button>
+            <Link className="my-2 btn" to="../Cart">
+              Checkout
+            </Link>
             <p className="cart__title">Total: <strong>{Formatter(parseInt(totalPrice))} COP</strong></p>
           </div>
+
+          
         </Offcanvas.Body>
 
         

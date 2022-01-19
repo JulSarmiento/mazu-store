@@ -32,7 +32,7 @@ export default function Slider(){
       <Carousel.Item>
         <img
           className="d-block w-100 banner__picture"
-          src="https://firebasestorage.googleapis.com/v0/b/mazu-store.appspot.com/o/banners%2Fbanner-collars.png?alt=media&token=e91571a8-429a-4196-86e7-6e858f164ed7"
+          src="https://firebasestorage.googleapis.com/v0/b/mazu-store.appspot.com/o/banners%2FBanner-tags.png?alt=media&token=58af9d31-60f5-41a7-b34f-3d8f2aae2cf5"
           alt="Banner de Placas"
           loading="lazy"
         />
