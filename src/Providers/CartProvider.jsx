@@ -2,11 +2,13 @@ import React, {useState} from 'react';
 
 import CartContext from '../Context/CartContext';
 
-const DEFAULT_CART = {totalItems: 0, products: [], totalPrice: 0}
+const DEFAULT_CART = {products: []}
 
 const CartProvider = ({children}) => {
 	
 	const [cart, setCart] = useState(DEFAULT_CART);
+
+	const {products} = cart;
 
 	const getUUID = (product, options) => {
 		return Buffer.from(JSON.stringify({product, options})).toString('base64')
@@ -17,11 +19,7 @@ const CartProvider = ({children}) => {
 	 * @param {string} itemId 
 	 * @returns         
 	 */
-	const isInCart = (itemId) => {
-		const {products} = cart
-
-		return products.findIndex(({uuid}) => itemId === uuid);
-	}
+	const isInCart = (itemId) => products.findIndex(({uuid}) => itemId === uuid);
 
 	/**
 	 * This functon add a new item to the cart list
@@ -29,9 +27,6 @@ const CartProvider = ({children}) => {
 	 * @param {number} counter 
 	 */
 	const addItem = (product, counter, options) => {
-
-		let { totalItems, products, totalPrice } = cart;
-		
 		const uuid = getUUID(product, options);
 
 		const index = isInCart(uuid);
@@ -41,36 +36,54 @@ const CartProvider = ({children}) => {
 		} else {
 			products.push({uuid, product, counter, ...options});
 		}
-
-		totalItems+= counter;
-		totalPrice+= product.price*counter;
-
-		setCart({...cart, totalItems, products, totalPrice });
-		
+		 
+		setCart({...cart, products });
 	};
 
-	const removeItem = (itemId) => {
-		let {products, totalItems, totalPrice} = cart
+	const updateProduct = (index, newProduct) => {
+		products[index] = newProduct;
 
+		setCart({...cart, products});
+	}
+
+	const removeItem = (itemId) => {
 		const index = isInCart(itemId);
 
-		console.log('Removing index', itemId, index)
 		if (index >= 0 ) {
-			const {product, counter} = products[index];
-
-			totalItems -= counter
-			totalPrice -= product.price * counter;
-			
 			products.splice(index, 1);
-			setCart({...cart, products, totalItems, totalPrice});
+			setCart({...cart, products});
 		}
 	};
 
-	const clear = () => {
-		setCart({totalItems: 0, products: [], totalPrice: 0})
-	};
+	const clear = () => setCart({products: []});
 
-	return <CartContext.Provider value={{cart, addItem, removeItem, clear, isInCart}}>
+	const getTotalProducts = () => products.reduce( (totalItems, product) => totalItems+=product.counter, 0);
+
+	const getTotalPrice = () => products.reduce( (price, {product, counter}) => price+=counter*product.price, 0);
+
+	const calculateShipping = (price) => {
+		if(price < 350000){
+			return 15000;
+		}
+
+		if(price < 450000) {
+			return 12000;
+		} 
+		
+		return 0;
+	}
+
+	return <CartContext.Provider value={{
+		cart,
+		addItem, 
+		removeItem,
+		clear,
+		isInCart,
+		updateProduct,
+		getTotalProducts,
+		getTotalPrice,
+		calculateShipping
+	}}>
 		{children}
 		<pre style={{display: "none"}}>{JSON.stringify(cart, undefined, 2)}</pre>
 	</CartContext.Provider>;

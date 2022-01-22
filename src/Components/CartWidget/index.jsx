@@ -12,19 +12,27 @@ import "./index.css";
  */
 export default function CartWidget () {
 
-  const {cart, removeItem, clear} = useContext(CartContext);
+  const {cart, removeItem, clear, getTotalPrice, getTotalProducts} = useContext(CartContext);
 
   const [show, setShow] = useState(false);
 
-  const {totalItems, products, totalPrice} = cart;
+  const {products} = cart;
+
+  const totalItems = getTotalProducts();
+
+  const totalPrice = getTotalPrice();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  console.log('Items', products);
+  console.log('Total', totalItems, totalPrice);
   return(
     <>
       <Button onClick={handleShow} className="cart__btn">
-        <i className="fas fa-shopping-cart"></i> <Badge className="mx-1" bg="danger">{totalItems}</Badge>
+        <i className="fas fa-shopping-cart"></i> 
+        {products.length == 0 ? <Badge className="d-none" bg="danger">{totalItems}</Badge> : <Badge className="mx-1" bg="danger">{totalItems}</Badge>}
+        
       </Button>
 
       <Offcanvas show={show} onHide={handleClose} className="container cart">
@@ -72,7 +80,7 @@ export default function CartWidget () {
             <Link className="my-2 btn" to="/Cart">
               Checkout
             </Link>
-            <p className="cart__title">Total: <strong>{Formatter(parseInt(totalPrice))} COP</strong></p>
+            <p className="cart__title">Total: <strong>{Formatter(totalPrice)} COP</strong></p>
           </div>
 
           
