@@ -38,7 +38,7 @@ const Collars = [
     ruta: "/Product/C" },
 
   { colId: '4', 
-    slug: "Custom", 
+    slug: "Collars", 
     line: "Elegant", 
     type: "10 mm", 
     stones: "Piedras de Murano" ,
@@ -95,7 +95,8 @@ const Collars = [
     stock: 15, 
     price: "100000", 
     material: "Acero Inoxidable dorado", 
-    picture: "https://firebasestorage.googleapis.com/v0/b/mazu-store.appspot.com/o/products%2Fcollar-light%2Fcollar-light-blueAgathe-front.jpg?alt=media&token=840a2491-0397-4121-8976-d3f6ae30e33f", ruta: "/Product/G" },
+    picture: "https://firebasestorage.googleapis.com/v0/b/mazu-store.appspot.com/o/products%2Fcollar-light%2Fcollar-light-blueAgathe-front.jpg?alt=media&token=840a2491-0397-4121-8976-d3f6ae30e33f", 
+    ruta: "/Product/G" },
 
   // Tags
   { colId: '9', 

@@ -18,7 +18,7 @@ import "./index.css";
  */
 export default function NavBar({title}) {
 
-  const userIcon = <i class="fas fa-user"/>
+  const userIcon = <i className="fas fa-user"/>
 
   return (
 
@@ -26,8 +26,8 @@ export default function NavBar({title}) {
 
       <Container className="header__container">
 
-        <Navbar.Brand >
-          <Link to="/"><img src={Logo} alt="" className="header__logo" /></Link>
+        <Navbar.Brand as={Link} to="/">
+          <img src={Logo} alt="" className="header__logo" />
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -36,7 +36,7 @@ export default function NavBar({title}) {
 
           <Nav className="me-auto">
 
-            <Nav.Link ><Link to="/Categories" className="mx-3 my-auto links "> Store  </Link></Nav.Link>
+            <Nav.Link as={Link} to="/Categories" className="mx-3 my-auto links" >Store</Nav.Link>
 
             <CartWidget/>
             

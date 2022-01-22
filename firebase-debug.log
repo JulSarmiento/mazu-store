@@ -1,0 +1,33 @@
+[debug] [2022-01-19T21:22:55.699Z] ----------------------------------------------------------------------
+[debug] [2022-01-19T21:22:55.700Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\jasa1\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-01-19T21:22:55.701Z] CLI Version:   9.23.1
+[debug] [2022-01-19T21:22:55.701Z] Platform:      win32
+[debug] [2022-01-19T21:22:55.701Z] Node Version:  v16.13.1
+[debug] [2022-01-19T21:22:55.704Z] Time:          Wed Jan 19 2022 16:22:55 GMT-0500 (Colombia Standard Time)
+[debug] [2022-01-19T21:22:55.704Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-01-19T21:22:55.706Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2022-01-19T21:22:55.751Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-01-19T21:22:55.751Z] > authorizing via signed-in user (julhsarmiento@gmail.com)
+[debug] [2022-01-19T21:22:55.752Z] [iam] checking project mazu-store for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2022-01-19T21:22:55.753Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-01-19T21:22:55.753Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-01-19T21:22:56.028Z] <<< HTTP RESPONSE 200 {"date":"Wed, 19 Jan 2022 21:22:55 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-19T21:22:56.034Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/mazu-store:testIamPermissions  
+ {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2022-01-19T21:22:56.221Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2022-01-19T21:22:56.221Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2022-01-19T21:22:56.410Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 19 Jan 2022 21:22:55 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=107","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-19T21:22:56.411Z] > refreshing access token with scopes: []
+[debug] [2022-01-19T21:22:56.411Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-01-19T21:22:56.639Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Wed, 19 Jan 2022 21:22:55 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-19T21:22:56.649Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mazu-store [none]
+[debug] [2022-01-19T21:22:57.386Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mazu-store 200
+[debug] [2022-01-19T21:22:57.386Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mazu-store {"projectId":"mazu-store","projectNumber":"1091831215165","displayName":"mazu-store","name":"projects/mazu-store","resources":{"hostingSite":"mazu-store","storageBucket":"mazu-store.appspot.com","locationId":"us-central"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'mazu-store'...
+[info] 
+[info] i  deploying storage, firestore, hosting 
+[info] Running command: npm run build

@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {Row} from "react-bootstrap";
 import {useParams} from "react-router-dom";
-
+import useCollection from "../../Hooks/DocumentsHook"
 import ItemList from "../ItemList";
 import Loading from "../Loading";
-import ProductCollars from "../../Mock/ProductCollars"
+
 
 /**
  * This component manage the logic and the call for the api mock. 
@@ -13,33 +13,8 @@ import ProductCollars from "../../Mock/ProductCollars"
 export default function ItemListContainer() {
   console.log(useParams());
 
-  const [items, setItems] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const {line} = useParams();
-
-  useEffect(() => {
-
-    const itemPromise = new Promise((resolve, reject) => {
-      setIsLoading(true);
-      setTimeout(() => {
-        resolve(ProductCollars);
-      }, 2000);
-
-    })
-
-    itemPromise.then((res) => {
-
-      if(!!line){
-        setItems(res.filter(x => x.slug === line));
-      } else{
-        setItems(res);
-      }
-      
-      
-    }).finally(() => {
-      setIsLoading(false);
-    })
-  }, [ line]); 
+  const {items, isLoading} = useCollection("Products");
+  const {line} = useParams();  
 
   if(isLoading){
     return(
@@ -57,11 +32,13 @@ export default function ItemListContainer() {
     )
   }
   
+  const lines = !!line ? items.filter(x => x.slug === line) : items
+  
   return(
     // Enviamos el array de objetos del api al itemList para ser mapeados.
     <Row className=' container d-flex flex-row mx-auto'>
       <h2 className='my-5' >PRODUCTOS</h2>
-      <ItemList items={items} />
+      <ItemList items={lines} />
     </Row>
     
     

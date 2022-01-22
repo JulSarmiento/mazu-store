@@ -40,7 +40,7 @@ function App() {
 
             <Route path="/Products/:line" component={lazy(() => import('./Components/ItemListContainer'))}/>
 
-            <Route exact path="/Cart" component={lazy(() => import('./Components/Cart'))}/>
+            <Route path="/Cart" component={lazy(() => import('./Components/Cart'))}/>
 
             <Route path="/Login" component={lazy(() => import('./Components/LogindFormContainer'))} />
 

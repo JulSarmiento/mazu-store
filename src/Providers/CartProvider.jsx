@@ -8,15 +8,19 @@ const CartProvider = ({children}) => {
 	
 	const [cart, setCart] = useState(DEFAULT_CART);
 
+	const getUUID = (product, options) => {
+		return Buffer.from(JSON.stringify({product, options})).toString('base64')
+	}
+
 	/**
 	 * This function validates if an item already exists in the cart list.
-	 * @param {number} itemId 
-	 * @returns 
+	 * @param {string} itemId 
+	 * @returns         
 	 */
 	const isInCart = (itemId) => {
 		const {products} = cart
 
-		return products.findIndex( ({product}) => itemId === product.colId);
+		return products.findIndex(({uuid}) => itemId === uuid);
 	}
 
 	/**
@@ -27,12 +31,15 @@ const CartProvider = ({children}) => {
 	const addItem = (product, counter, options) => {
 
 		let { totalItems, products, totalPrice } = cart;
-		const validator = isInCart(product.colId, options);
+		
+		const uuid = getUUID(product, options);
 
-		if(validator >= 0){
-			products[validator].counter += counter;
+		const index = isInCart(uuid);
+
+		if(index >= 0){
+			products[index].counter += counter;
 		} else {
-			products.push({product, counter, ...options});
+			products.push({uuid, product, counter, ...options});
 		}
 
 		totalItems+= counter;
@@ -63,7 +70,10 @@ const CartProvider = ({children}) => {
 		setCart({totalItems: 0, products: [], totalPrice: 0})
 	};
 
-	return <CartContext.Provider value={{cart, addItem, removeItem, clear, isInCart}}>{children}</CartContext.Provider>;
+	return <CartContext.Provider value={{cart, addItem, removeItem, clear, isInCart}}>
+		{children}
+		<pre style={{display: "none"}}>{JSON.stringify(cart, undefined, 2)}</pre>
+	</CartContext.Provider>;
 }
 
 export default CartProvider;

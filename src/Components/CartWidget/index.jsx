@@ -14,9 +14,9 @@ export default function CartWidget () {
 
   const {cart, removeItem, clear} = useContext(CartContext);
 
-  const {totalItems, products, totalPrice} = cart;
-
   const [show, setShow] = useState(false);
+
+  const {totalItems, products, totalPrice} = cart;
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -24,7 +24,7 @@ export default function CartWidget () {
   return(
     <>
       <Button onClick={handleShow} className="cart__btn">
-        <i class="fas fa-shopping-cart"></i> <Badge className="mx-1" bg="danger">{totalItems}</Badge>
+        <i className="fas fa-shopping-cart"></i> <Badge className="mx-1" bg="danger">{totalItems}</Badge>
       </Button>
 
       <Offcanvas show={show} onHide={handleClose} className="container cart">
@@ -33,7 +33,7 @@ export default function CartWidget () {
         </Offcanvas.Header>
         <Offcanvas.Body>
 
-          {products.length == 0 ? 
+          {products.length === 0 ? 
               <div className="d-flex gap-2">
                 <p> Carrito Vacio. Para comprar visita nuestra</p>
                 <Link to="../Categories" className="cart__link mt-1">Store</Link>
@@ -41,22 +41,22 @@ export default function CartWidget () {
             : 
               <ListGroup as="ol" numbered className="gap-3">
 
-              {products.map( ({product, counter}) => {
+              {products.map( ({uuid, product, counter, size, type, complement}) => {
                 return (
                   <ListGroup.Item
-                  key={product.colId}
+                  key={uuid}
                   as="li"
                   className="d-flex justify-content-between align-items-start card__shadow"
                   >
                     <div className="ms-2 me-auto">
-                      <div className="fw-bold">{product.line} {product.color} {product.type} Talla:{product.size}</div>
+                      <div className="fw-bold">{product.line} {product.color} {type} {size ? `Talla: ${size}` : null} {complement ? `(${complement})` : null}</div>
                       {Formatter(product.price)} COP
                     </div>
                     <Badge variant="primary" className="mx-3 counter__badge">
                       {counter}
                     </Badge>
-                    <Button className="delete-icon" onClick={() => removeItem(product.colId)} >
-                      <i class="fas fa-trash" ></i>
+                    <Button className="delete-icon" onClick={() => removeItem(uuid)} >
+                      <i className="fas fa-trash" ></i>
                     </Button> 
                   </ListGroup.Item>
                 )
@@ -65,12 +65,11 @@ export default function CartWidget () {
             </ListGroup>
             }
          
-
           <div className="my-3 d-flex flex-column cart__footerContainer" >
             <Button className="my-2 btn" onClick={clear}>
               Vaciar Carrito
             </Button>
-            <Link className="my-2 btn" to="../Cart">
+            <Link className="my-2 btn" to="/Cart">
               Checkout
             </Link>
             <p className="cart__title">Total: <strong>{Formatter(parseInt(totalPrice))} COP</strong></p>
@@ -88,6 +87,3 @@ export default function CartWidget () {
     
 }
 
-
-// btn agregar al carrito debe agregar al carrito el producto con las mod que especifica el usuario (talla y tipo)
-//totalItems sumar la cantidad deseada por el usuario 

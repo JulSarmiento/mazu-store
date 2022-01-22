@@ -7,5 +7,5 @@ import Category from "../Category";
  * @returns the categorie's array mapped
  */
 export default function CategoriesList({categories}) {
-  return categories.map((category) => <Category key={category.catId} category={category}/>)
+  return categories.map((category) => <Category key={category.id} category={category}/>)
 }

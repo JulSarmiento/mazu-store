@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import CategoriesList from "../CategoriesList";
 
-import Categories from "../../Mock/Categories";
 import Loading from "../Loading";
 import { Row } from "react-bootstrap";
+import useCollection from "../../Hooks/DocumentsHook";
 
 
 /**
@@ -12,25 +12,7 @@ import { Row } from "react-bootstrap";
  * @returns categories mapped.
  */
 export default function CategoriesContainer() {
-
-  const [categories, setCategories] = useState([]);
-
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    setIsLoading(true);
-    const catPromise = new Promise((resolve, reject) => {
-      
-      setTimeout(() => {
-        resolve(Categories);
-      }, 2000)
-    })
-
-    catPromise.then((res) => {
-      setCategories(res);
-      setIsLoading(false);
-    });
-  }, [categories])
+  const {isLoading, items} = useCollection('Categories');
 
   if(isLoading){
     return (
@@ -43,7 +25,7 @@ export default function CategoriesContainer() {
     <>
       <Row className='container d-flex flex-row justify-content-center align-items-center mx-auto my-5'>
         <h2 className='my-5' > CATEGORIAS </h2>
-        <CategoriesList categories={categories}/>
+        <CategoriesList categories={items.sort( (a, b) => a.order > b.order)}/>
       </Row>
     </>
 
