@@ -24,11 +24,6 @@ export default function Cart() {
 
   const shipping = calculateShipping(totalPrice);
 
-  const payment = () => {
-    alert('Gracias por su compra. A su correo llegaran notificaciones con los estados de su pedido.')
-    clear();
-  }
-
   return (
 
     //Carrito con opcion de agregar cantidades
@@ -86,13 +81,14 @@ export default function Cart() {
             <Button className="my-2 btn" onClick={clear}>
               Vaciar Carrito
             </Button>
-            <Link className="my-2 btn" onClick={payment} to="/">
+            <Link className="my-2 btn" to="/Checkout">
               Proceder con el pago
             </Link>
             
           </div>
 
       </div>
+
   }
  </div>
 

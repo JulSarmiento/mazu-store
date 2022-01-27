@@ -46,6 +46,8 @@ function App() {
 
             <Route path="/Signin" component={lazy(() => import('./Components/SigninFormContainer'))}/>
 
+            <Route path="/Checkout" component={lazy(() => import('./Components/Checkout'))}/>
+
             {/* Esta es la ultima ruta, */}
             <Route path="*" component={lazy(() => import('./Components/NoPageFound'))} />
           </Switch>
