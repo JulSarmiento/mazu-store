@@ -17,4 +17,4 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MAZU_STORE }}'
           projectId: mazu-store
-          channelId: 'pr-${{ github.run_id }}'
+          channelId: '${{ github.run_id }}'
