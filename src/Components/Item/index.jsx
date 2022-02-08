@@ -26,7 +26,7 @@ export default function Item({item}){
             {formartter.format(parseInt(item.price))}  COP
           </Card.Text>
         </Card.Body>
-        <Link to={`/Products/${item.slug}/${item.colId}`} className="btn btn-primary">Ver Opciones</Link>
+        <Link to={`/Products/${item.slug}/${item.id}`} className="btn btn-primary">Ver Opciones</Link>
       </Card>
     </Col>
 

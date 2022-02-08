@@ -1,0 +1,17 @@
+.footer{
+  border-bottom: 5px solid #682C1A;
+  box-shadow: -1px -7px 20px -2px #ff847417;
+  bottom: 0;
+}
+
+.footer p{
+  font-family: 'Poppins', 'sans-serif';
+}
+
+.footer p a{
+  color: #682C1A;
+}
+
+.footer .footer__icons a{
+  color: #682C1A;
+}

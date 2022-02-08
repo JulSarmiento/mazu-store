@@ -24,14 +24,12 @@ export default function CartWidget () {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  console.log('Items', products);
-  console.log('Total', totalItems, totalPrice);
+  
   return(
     <>
       <Button onClick={handleShow} className="cart__btn">
         <i className="fas fa-shopping-cart"></i> 
-        {products.length == 0 ? <Badge className="d-none" bg="danger">{totalItems}</Badge> : <Badge className="mx-1" bg="danger">{totalItems}</Badge>}
+        {products.length === 0 ? <Badge className="d-none" bg="danger">{totalItems}</Badge> : <Badge className="mx-1" bg="danger">{totalItems}</Badge>}
         
       </Button>
 
@@ -77,7 +75,7 @@ export default function CartWidget () {
             <Button className="my-2 btn" onClick={clear}>
               Vaciar Carrito
             </Button>
-            <Link className="my-2 btn" to="/Cart">
+            <Link className="my-2 btn" to="/Cart" onClick={handleClose}>
               Checkout
             </Link>
             <p className="cart__title">Total: <strong>{Formatter(totalPrice)} COP</strong></p>

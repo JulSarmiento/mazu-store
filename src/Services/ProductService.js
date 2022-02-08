@@ -1,24 +1,10 @@
 import {firestore} from '../Utilities/firebase';
+import { collection } from "firebase/firestore";
 
 export const listProducts = async () => {
-    const collection = firestore.collection('products');
+    const ref = collection('Products');
 
-    const data = await collection.get();
+    const data = await ref.get();
     
     return data.data();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-``

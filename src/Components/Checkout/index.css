@@ -1,0 +1,50 @@
+.picture{
+  height: 310px;
+  margin: 0 autos;
+  
+}
+
+.title{
+  font-family: 'Syncopate', 'serif'
+}
+
+.checkout__form{
+  box-shadow: 0px 0px 20px 2px rgba(104, 44, 26, 0.116);
+  border-radius: 10px;
+  font-family: 'Poppins', 'sans-serif';
+}
+
+
+@media (min-width: 768px) {
+  .checkout{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+  .picture{
+    height: 400px;
+  }
+
+  .checkout__form{
+    width: 400px;
+  }
+
+}
+
+@media (min-width: 1440px) {
+
+  .picture{
+    height: 600px;
+  }
+
+  .checkout__form{
+    width: 600px;
+  }
+
+
+}

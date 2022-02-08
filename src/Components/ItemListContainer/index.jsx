@@ -1,7 +1,8 @@
 import React from "react";
 import {Row} from "react-bootstrap";
 import {useParams} from "react-router-dom";
-import useCollection from "../../Hooks/DocumentsHook"
+import { where} from "firebase/firestore";
+import useCollection from "../../Hooks/CollectionHook"
 import ItemList from "../ItemList";
 import Loading from "../Loading";
 
@@ -11,13 +12,12 @@ import Loading from "../Loading";
  * @returns the object's array
  */
 export default function ItemListContainer() {
-  console.log(useParams());
-
-  const {items, isLoading} = useCollection("Products");
   const {line} = useParams();  
 
+  const {items, isLoading} = useCollection("Products", line ? where('slug', '==', line) : null);
+
   if(isLoading){
-    return(
+    return (
       <Row className="loading-container">
         <Loading message={'Cargando Productos'}  />
       </Row>
@@ -26,19 +26,17 @@ export default function ItemListContainer() {
 
   if(items.length === 0){
     return (
-      <Row className="container ">
+      <Row className="container">
         <p className="text-center">No existen productos para la categoria {items.line}</p>
       </Row>
     )
   }
-  
-  const lines = !!line ? items.filter(x => x.slug === line) : items
-  
-  return(
+
+  return (
     // Enviamos el array de objetos del api al itemList para ser mapeados.
     <Row className=' container d-flex flex-row mx-auto'>
       <h2 className='my-5' >PRODUCTOS</h2>
-      <ItemList items={lines} />
+      <ItemList items={items} />
     </Row>
     
     

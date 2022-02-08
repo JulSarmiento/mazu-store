@@ -77,7 +77,7 @@ export default function ItemDetail({product}){
 
                   <div className=" d-flex align-items-center gap-1 form__item">
                     <label htmlFor="">XS</label>
-                    <input type="radio" name="size" value="XS" onChange={onInputChange}required/>
+                    <input type="radio" name="size" value="XS" onChange={onInputChange} required/>
                   </div>
 
                   <div  className=" d-flex align-items-center gap-1 form__item">

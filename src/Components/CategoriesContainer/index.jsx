@@ -4,7 +4,7 @@ import CategoriesList from "../CategoriesList";
 
 import Loading from "../Loading";
 import { Row } from "react-bootstrap";
-import useCollection from "../../Hooks/DocumentsHook";
+import useCollection from "../../Hooks/CollectionHook";
 
 
 /**

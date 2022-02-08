@@ -1,10 +1,10 @@
 import React from "react";
 import Logo from "../../assets/imgs/mazu-icon.svg";
-import {Navbar, Container, NavDropdown, Nav} from "react-bootstrap";
+import {Navbar, Container, Nav} from "react-bootstrap";
 import {Link} from "react-router-dom";
 
 import "./index.css";
-import HeaderDropdown from "../HeaderDropDown";
+
 import CartWidget from "../CartWidget";
 import "./index.css";
 
@@ -18,7 +18,7 @@ import "./index.css";
  */
 export default function NavBar({title}) {
 
-  const userIcon = <i className="fas fa-user"/>
+  // const userIcon = <i className="fas fa-user"/>
 
   return (
 
@@ -40,10 +40,6 @@ export default function NavBar({title}) {
 
             <CartWidget/>
             
-            <NavDropdown title={userIcon} id="basic-nav-dropdown" className="mx-3">
-              <HeaderDropdown/>
-            </NavDropdown>
-
           </Nav>    
 
         </Navbar.Collapse> 
