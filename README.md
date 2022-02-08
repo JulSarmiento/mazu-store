@@ -1,7 +1,7 @@
 # Mazuzoe 
 ## _for Fancy Pets_
 
-[![Deploy to Firebase Hosting on merge](https://github.com/JulSarmiento/JulSarmiento.github.io/actions/workflows/firebase-hosting-push.yml/badge.svg)](https://github.com/JulSarmiento/JulSarmiento.github.io/actions/workflows/firebase-hosting-push.yml)
+[![Deploy to Firebase Hosting on Push](https://github.com/JulSarmiento/mazu-store/actions/workflows/firebase-hosting-push.yml/badge.svg)](https://github.com/JulSarmiento/mazu-store/actions/workflows/firebase-hosting-push.yml)
 
 [![Build Status](	https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/JulSarmiento) [![Build Status](	https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/julieth-sarmiento/) [![Build Status](https://img.shields.io/badge/Codepen-000000?style=for-the-badge&logo=codepen&logoColor=white)](https://codepen.io/julsarmiento) 
 
