@@ -20,11 +20,10 @@ jobs:
           
       - name: Install dependencies
         run: npm install
-        
-      - name: Firebase Deploy
-        uses: FirebaseExtended/action-hosting-deploy@v0
+
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
         with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MAZU_STORE }}'
-          projectId: mazu-store
-          channelId: '${{ github.run_id }}'
+          args: deploy --only hosting
+        env:
+          GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MAZU_STORE }}
